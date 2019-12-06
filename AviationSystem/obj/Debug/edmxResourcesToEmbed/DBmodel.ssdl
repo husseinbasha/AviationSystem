@@ -1,0 +1,284 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ATSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="AdminID" />
+    </Key>
+    <Property Name="AdminID" Type="int" Nullable="false" />
+    <Property Name="AdminNo" Type="nchar" MaxLength="10" />
+    <Property Name="AdminFirstName" Type="nchar" MaxLength="10" />
+    <Property Name="AdminLastName" Type="nchar" MaxLength="10" />
+    <Property Name="AdminUsername" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="AdminPassword" Type="nchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ATO">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="ATO_ID" Type="int" Nullable="false" />
+    <Property Name="ATO_First_Name" Type="nchar" MaxLength="10" />
+    <Property Name="ATO_Last_Name" Type="nchar" MaxLength="10" />
+    <Property Name="ATO_Shift_Starts" Type="datetime" />
+    <Property Name="ATO_Shift_Ends" Type="datetime" />
+    <Property Name="ATO_DOB" Type="date" />
+    <Property Name="ATO_Phone_Number" Type="int" />
+    <Property Name="ATO_Reg_ID" Type="nchar" MaxLength="10" />
+    <Property Name="ATO_Permits_Issued" Type="int" />
+    <Property Name="ATO_Username" Type="nchar" MaxLength="10" />
+    <Property Name="ATO_Password" Type="nchar" MaxLength="10" />
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="AdminId" Type="int" />
+  </EntityType>
+  <EntityType Name="DiplomaticPermit">
+    <Key>
+      <PropertyRef Name="DiplomaticID" />
+    </Key>
+    <Property Name="DiplomaticID" Type="int" Nullable="false" />
+    <Property Name="DiplomaticNumber" Type="int" />
+    <Property Name="OperatorName" Type="nchar" MaxLength="10" />
+    <Property Name="AircraftType" Type="nchar" MaxLength="10" />
+    <Property Name="AircraftReg" Type="nchar" MaxLength="10" />
+    <Property Name="EntryPoint" Type="nchar" MaxLength="10" />
+    <Property Name="ExitPoint" Type="nchar" MaxLength="10" />
+    <Property Name="ArrivalTime" Type="datetime" />
+    <Property Name="TakeoffTime" Type="datetime" />
+    <Property Name="ATOid" Type="int" />
+    <Property Name="Purpose" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Emp_ATC">
+    <Key>
+      <PropertyRef Name="ATC_ID" />
+    </Key>
+    <Property Name="ATC_ID" Type="int" Nullable="false" />
+    <Property Name="ATC_First_Name" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="ATC_Last_Name" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="ATC_Shift_Starts" Type="datetime" Nullable="false" />
+    <Property Name="ATC_Shift_Ends" Type="datetime" Nullable="false" />
+    <Property Name="ATC_DOB" Type="date" Nullable="false" />
+    <Property Name="ATC_Phone_Number" Type="int" Nullable="false" />
+    <Property Name="ATC_Reg_ID" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="ATC_Permits_Issued" Type="int" Nullable="false" />
+    <Property Name="ATC_Username" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="ATC_Password" Type="nchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LandingPermit">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="OperatorName" Type="nchar" MaxLength="10" />
+    <Property Name="AircraftType" Type="nchar" MaxLength="10" />
+    <Property Name="AircraftReg" Type="nchar" MaxLength="10" />
+    <Property Name="EntryPoint" Type="nchar" MaxLength="10" />
+    <Property Name="ExitPoint" Type="nchar" MaxLength="10" />
+    <Property Name="ArrivalTime" Type="datetime" />
+    <Property Name="ATOid" Type="int" />
+    <Property Name="TakeoffTime" Type="datetime" />
+    <Property Name="Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LandingTakeoffPermit">
+    <Key>
+      <PropertyRef Name="LandingTakeoffID" />
+    </Key>
+    <Property Name="LandingTakeoffID" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="LandingTakeoffNo" Type="nchar" MaxLength="10" />
+    <Property Name="OperatorName" Type="nchar" MaxLength="10" />
+    <Property Name="AircraftType" Type="nchar" MaxLength="10" />
+    <Property Name="AircraftReg" Type="nchar" MaxLength="10" />
+    <Property Name="EntryPoint" Type="nchar" MaxLength="10" />
+    <Property Name="ExitPoint" Type="nchar" MaxLength="10" />
+    <Property Name="ATOid" Type="int" />
+    <Property Name="ArrivalTime" Type="datetime" />
+    <Property Name="TakeoffTime" Type="datetime" />
+    <Property Name="Purpose" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="OverFlyPermit">
+    <Key>
+      <PropertyRef Name="OverFlyID" />
+    </Key>
+    <Property Name="OverFlyID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OverFlyNumber" Type="int" />
+    <Property Name="OperatorName" Type="nchar" MaxLength="10" />
+    <Property Name="AircraftType" Type="nchar" MaxLength="10" />
+    <Property Name="AircraftReg" Type="nchar" MaxLength="10" />
+    <Property Name="EntryPoint" Type="nchar" MaxLength="10" />
+    <Property Name="ExitPoint" Type="nchar" MaxLength="10" />
+    <Property Name="ATOid" Type="int" />
+    <Property Name="ArrivalTime" Type="datetime" />
+    <Property Name="TakeoffTime" Type="datetime" />
+    <Property Name="Purpose" Type="nchar" MaxLength="10" />
+    <Property Name="BillingAddress" Type="nchar" MaxLength="10" />
+    <Property Name="FlightNumber" Type="int" />
+  </EntityType>
+  <EntityType Name="ScheduledFlight">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="StartsIn" Type="datetime" />
+    <Property Name="EndsIn" Type="datetime" />
+    <Property Name="ATOid" Type="int" />
+    <Property Name="Regesteration" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ScheduledPermitData">
+    <Key>
+      <PropertyRef Name="spdID" />
+    </Key>
+    <Property Name="FlightNumber" Type="varchar" MaxLength="50" />
+    <Property Name="Route" Type="varchar" MaxLength="50" />
+    <Property Name="spdID" Type="int" Nullable="false" />
+    <Property Name="EntryPoint" Type="varchar" MaxLength="50" />
+    <Property Name="ExitPoint" Type="varchar" MaxLength="50" />
+    <Property Name="DaysofOperate" Type="varchar" MaxLength="50" />
+    <Property Name="ScheduledPermitID" Type="int" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK_ATO_Admin">
+    <End Role="Admin" Type="Self.Admin" Multiplicity="0..1" />
+    <End Role="ATO" Type="Self.ATO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Admin">
+        <PropertyRef Name="AdminID" />
+      </Principal>
+      <Dependent Role="ATO">
+        <PropertyRef Name="AdminId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DiplomaticPermit_ATO">
+    <End Role="ATO" Type="Self.ATO" Multiplicity="0..1" />
+    <End Role="DiplomaticPermit" Type="Self.DiplomaticPermit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ATO">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="DiplomaticPermit">
+        <PropertyRef Name="ATOid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LandingPermit_ATO">
+    <End Role="ATO" Type="Self.ATO" Multiplicity="0..1" />
+    <End Role="LandingPermit" Type="Self.LandingPermit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ATO">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="LandingPermit">
+        <PropertyRef Name="ATOid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LandingTakeoffPermit_ATO">
+    <End Role="ATO" Type="Self.ATO" Multiplicity="0..1" />
+    <End Role="LandingTakeoffPermit" Type="Self.LandingTakeoffPermit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ATO">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="LandingTakeoffPermit">
+        <PropertyRef Name="ATOid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OverFlyPermit_ATO">
+    <End Role="ATO" Type="Self.ATO" Multiplicity="0..1" />
+    <End Role="OverFlyPermit" Type="Self.OverFlyPermit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ATO">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="OverFlyPermit">
+        <PropertyRef Name="ATOid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OverFlyPermit_ATO1">
+    <End Role="ATO" Type="Self.ATO" Multiplicity="0..1" />
+    <End Role="OverFlyPermit" Type="Self.OverFlyPermit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ATO">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="OverFlyPermit">
+        <PropertyRef Name="ATOid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ScheduledFlight_ATO">
+    <End Role="ATO" Type="Self.ATO" Multiplicity="0..1" />
+    <End Role="ScheduledFlight" Type="Self.ScheduledFlight" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ATO">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ScheduledFlight">
+        <PropertyRef Name="ATOid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ScheduledPermitData_ScheduledFlight">
+    <End Role="ScheduledFlight" Type="Self.ScheduledFlight" Multiplicity="0..1" />
+    <End Role="ScheduledPermitData" Type="Self.ScheduledPermitData" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ScheduledFlight">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ScheduledPermitData">
+        <PropertyRef Name="ScheduledPermitID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ATSModelStoreContainer">
+    <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ATO" EntityType="Self.ATO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DiplomaticPermit" EntityType="Self.DiplomaticPermit" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Emp_ATC" EntityType="Self.Emp_ATC" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LandingPermit" EntityType="Self.LandingPermit" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LandingTakeoffPermit" EntityType="Self.LandingTakeoffPermit" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OverFlyPermit" EntityType="Self.OverFlyPermit" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ScheduledFlight" EntityType="Self.ScheduledFlight" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ScheduledPermitData" EntityType="Self.ScheduledPermitData" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_ATO_Admin" Association="Self.FK_ATO_Admin">
+      <End Role="Admin" EntitySet="Admin" />
+      <End Role="ATO" EntitySet="ATO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DiplomaticPermit_ATO" Association="Self.FK_DiplomaticPermit_ATO">
+      <End Role="ATO" EntitySet="ATO" />
+      <End Role="DiplomaticPermit" EntitySet="DiplomaticPermit" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LandingPermit_ATO" Association="Self.FK_LandingPermit_ATO">
+      <End Role="ATO" EntitySet="ATO" />
+      <End Role="LandingPermit" EntitySet="LandingPermit" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LandingTakeoffPermit_ATO" Association="Self.FK_LandingTakeoffPermit_ATO">
+      <End Role="ATO" EntitySet="ATO" />
+      <End Role="LandingTakeoffPermit" EntitySet="LandingTakeoffPermit" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OverFlyPermit_ATO" Association="Self.FK_OverFlyPermit_ATO">
+      <End Role="ATO" EntitySet="ATO" />
+      <End Role="OverFlyPermit" EntitySet="OverFlyPermit" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OverFlyPermit_ATO1" Association="Self.FK_OverFlyPermit_ATO1">
+      <End Role="ATO" EntitySet="ATO" />
+      <End Role="OverFlyPermit" EntitySet="OverFlyPermit" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ScheduledFlight_ATO" Association="Self.FK_ScheduledFlight_ATO">
+      <End Role="ATO" EntitySet="ATO" />
+      <End Role="ScheduledFlight" EntitySet="ScheduledFlight" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ScheduledPermitData_ScheduledFlight" Association="Self.FK_ScheduledPermitData_ScheduledFlight">
+      <End Role="ScheduledFlight" EntitySet="ScheduledFlight" />
+      <End Role="ScheduledPermitData" EntitySet="ScheduledPermitData" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

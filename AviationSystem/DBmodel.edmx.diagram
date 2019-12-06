@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="62958a14405a4695b42f479a345e7313" Name="Diagram1" ZoomLevel="54">
+        <EntityTypeShape EntityType="ATSModel.Admin" Width="1.5" PointX="0.75" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ATSModel.ATO" Width="1.5" PointX="2.875" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ATSModel.DiplomaticPermit" Width="1.5" PointX="7.25" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ATSModel.Emp_ATC" Width="1.5" PointX="0.625" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ATSModel.LandingPermit" Width="1.5" PointX="5.375" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ATSModel.LandingTakeoffPermit" Width="1.5" PointX="5.25" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ATSModel.OverFlyPermit" Width="1.5" PointX="7.25" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="ATSModel.ScheduledFlight" Width="1.5" PointX="4" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ATSModel.ScheduledPermitData" Width="1.5" PointX="7.25" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ATSModel.sysdiagram" Width="1.5" PointX="0.75" PointY="13.75" IsExpanded="true" />
+        <AssociationConnector Association="ATSModel.FK_ATO_Admin" ManuallyRouted="false" />
+        <AssociationConnector Association="ATSModel.FK_DiplomaticPermit_ATO" ManuallyRouted="false" />
+        <AssociationConnector Association="ATSModel.FK_LandingPermit_ATO" ManuallyRouted="false" />
+        <AssociationConnector Association="ATSModel.FK_LandingTakeoffPermit_ATO" ManuallyRouted="false" />
+        <AssociationConnector Association="ATSModel.FK_OverFlyPermit_ATO" ManuallyRouted="false" />
+        <AssociationConnector Association="ATSModel.FK_OverFlyPermit_ATO1" ManuallyRouted="false" />
+        <AssociationConnector Association="ATSModel.FK_ScheduledFlight_ATO" ManuallyRouted="false" />
+        <AssociationConnector Association="ATSModel.FK_ScheduledPermitData_ScheduledFlight" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

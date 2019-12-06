@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ATS_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="AdminID" />
+    </Key>
+    <Property Name="AdminID" Type="int" Nullable="false" />
+    <Property Name="AdminNo" Type="nchar" MaxLength="10" />
+    <Property Name="AdminFirstName" Type="nchar" MaxLength="10" />
+    <Property Name="AdminLastName" Type="nchar" MaxLength="10" />
+    <Property Name="AdminUsername" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="AdminPassword" Type="nchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'ATS_DB.dbo.DiplomaticPermit' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="DiplomaticPermit">
+          <Property Name="DiplomaticID" Type="int" />
+          <Property Name="DiplomaticNumber" Type="int" />
+          <Property Name="OperatorName" Type="nchar" MaxLength="10" />
+          <Property Name="AircraftType" Type="nchar" MaxLength="10" />
+          <Property Name="AircraftReg" Type="nchar" MaxLength="10" />
+          <Property Name="EntryPoint" Type="nchar" MaxLength="10" />
+          <Property Name="ExitPoint" Type="nchar" MaxLength="10" />
+          <Property Name="ArrivalTime" Type="datetime" />
+          <Property Name="TakeoffTime" Type="datetime" />
+          <Property Name="Purpose" Type="nchar" MaxLength="10" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'ATS_DB.dbo.Emp_ATC' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Emp_ATC">
+    <Key>
+      <PropertyRef Name="ATC_ID" />
+      <PropertyRef Name="ATC_Username" />
+      <PropertyRef Name="ATC_Password" />
+    </Key>
+    <Property Name="ATC_ID" Type="int" Nullable="false" />
+    <Property Name="ATC_First_Name" Type="nchar" MaxLength="10" />
+    <Property Name="ATC_Last_Name" Type="nchar" MaxLength="10" />
+    <Property Name="ATC_Shift_Starts" Type="datetime" />
+    <Property Name="ATC_Shift_Ends" Type="datetime" />
+    <Property Name="ATC_DOB" Type="date" />
+    <Property Name="ATC_Phone_Number" Type="int" />
+    <Property Name="ATC_Reg_ID" Type="nchar" MaxLength="10" />
+    <Property Name="ATC_Permits_Issued" Type="int" />
+    <Property Name="ATC_Username" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="ATC_Password" Type="nchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LandingPermit">
+    <Key>
+      <PropertyRef Name="LpermitID" />
+    </Key>
+    <Property Name="LpermitID" Type="int" Nullable="false" />
+    <Property Name="LpermitNo" Type="int" />
+    <Property Name="OperatorName" Type="nchar" MaxLength="10" />
+    <Property Name="AircraftType" Type="nchar" MaxLength="10" />
+    <Property Name="AircraftReg" Type="nchar" MaxLength="10" />
+    <Property Name="EntryPoint" Type="nchar" MaxLength="10" />
+    <Property Name="ExitPoint" Type="nchar" MaxLength="10" />
+    <Property Name="ArrivalTime" Type="datetime" />
+    <Property Name="TakeoffTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="LandingTakeoffPermit">
+    <Key>
+      <PropertyRef Name="LandingTakeoffID" />
+    </Key>
+    <Property Name="LandingTakeoffID" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="LandingTakeoffNo" Type="nchar" MaxLength="10" />
+    <Property Name="OperatorName" Type="nchar" MaxLength="10" />
+    <Property Name="AircraftType" Type="nchar" MaxLength="10" />
+    <Property Name="AircraftReg" Type="nchar" MaxLength="10" />
+    <Property Name="EntryPoint" Type="nchar" MaxLength="10" />
+    <Property Name="ExitPoint" Type="nchar" MaxLength="10" />
+    <Property Name="ArrivalTime" Type="datetime" />
+    <Property Name="TakeoffTime" Type="datetime" />
+    <Property Name="Purpose" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="OverFlyPermit">
+    <Key>
+      <PropertyRef Name="OverFlyID" />
+    </Key>
+    <Property Name="OverFlyID" Type="int" Nullable="false" />
+    <Property Name="OverFlyNumber" Type="int" />
+    <Property Name="OperatorName" Type="nchar" MaxLength="10" />
+    <Property Name="AircraftType" Type="nchar" MaxLength="10" />
+    <Property Name="AircraftReg" Type="nchar" MaxLength="10" />
+    <Property Name="EntryPoint" Type="nchar" MaxLength="10" />
+    <Property Name="ExitPoint" Type="nchar" MaxLength="10" />
+    <Property Name="ArrivalTime" Type="datetime" />
+    <Property Name="TakeoffTime" Type="datetime" />
+    <Property Name="Purpose" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Permits">
+    <Key>
+      <PropertyRef Name="PermitID" />
+    </Key>
+    <Property Name="PermitID" Type="int" Nullable="false" />
+    <Property Name="PermitNumber" Type="int" />
+    <Property Name="PermitType" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6035: The relationship 'FK_LandingPermit_Emp_ATC' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="FK_LandingPermit_Emp_ATC" />-->
+  <Association Name="FK_LandingPermit_Permits">
+    <End Role="Permits" Type="Self.Permits" Multiplicity="1" />
+    <End Role="LandingPermit" Type="Self.LandingPermit" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Permits">
+        <PropertyRef Name="PermitID" />
+      </Principal>
+      <Dependent Role="LandingPermit">
+        <PropertyRef Name="LpermitID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LandingTakeoffPermit_LandingTakeoffPermit">
+    <End Role="LandingTakeoffPermit" Type="Self.LandingTakeoffPermit" Multiplicity="1" />
+    <End Role="LandingTakeoffPermit1" Type="Self.LandingTakeoffPermit" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="LandingTakeoffPermit">
+        <PropertyRef Name="LandingTakeoffID" />
+      </Principal>
+      <Dependent Role="LandingTakeoffPermit1">
+        <PropertyRef Name="LandingTakeoffID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OverFlyPermit_OverFlyPermit">
+    <End Role="OverFlyPermit" Type="Self.OverFlyPermit" Multiplicity="1" />
+    <End Role="OverFlyPermit1" Type="Self.OverFlyPermit" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="OverFlyPermit">
+        <PropertyRef Name="OverFlyID" />
+      </Principal>
+      <Dependent Role="OverFlyPermit1">
+        <PropertyRef Name="OverFlyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ATS_DBModelStoreContainer">
+    <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LandingPermit" EntityType="Self.LandingPermit" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LandingTakeoffPermit" EntityType="Self.LandingTakeoffPermit" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OverFlyPermit" EntityType="Self.OverFlyPermit" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Permits" EntityType="Self.Permits" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Emp_ATC" EntityType="Self.Emp_ATC" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Emp_ATC].[ATC_ID] AS [ATC_ID], 
+    [Emp_ATC].[ATC_First_Name] AS [ATC_First_Name], 
+    [Emp_ATC].[ATC_Last_Name] AS [ATC_Last_Name], 
+    [Emp_ATC].[ATC_Shift_Starts] AS [ATC_Shift_Starts], 
+    [Emp_ATC].[ATC_Shift_Ends] AS [ATC_Shift_Ends], 
+    [Emp_ATC].[ATC_DOB] AS [ATC_DOB], 
+    [Emp_ATC].[ATC_Phone_Number] AS [ATC_Phone_Number], 
+    [Emp_ATC].[ATC_Reg_ID] AS [ATC_Reg_ID], 
+    [Emp_ATC].[ATC_Permits_Issued] AS [ATC_Permits_Issued], 
+    [Emp_ATC].[ATC_Username] AS [ATC_Username], 
+    [Emp_ATC].[ATC_Password] AS [ATC_Password]
+    FROM [dbo].[Emp_ATC] AS [Emp_ATC]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_LandingPermit_Permits" Association="Self.FK_LandingPermit_Permits">
+      <End Role="Permits" EntitySet="Permits" />
+      <End Role="LandingPermit" EntitySet="LandingPermit" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LandingTakeoffPermit_LandingTakeoffPermit" Association="Self.FK_LandingTakeoffPermit_LandingTakeoffPermit">
+      <End Role="LandingTakeoffPermit" EntitySet="LandingTakeoffPermit" />
+      <End Role="LandingTakeoffPermit1" EntitySet="LandingTakeoffPermit" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OverFlyPermit_OverFlyPermit" Association="Self.FK_OverFlyPermit_OverFlyPermit">
+      <End Role="OverFlyPermit" EntitySet="OverFlyPermit" />
+      <End Role="OverFlyPermit1" EntitySet="OverFlyPermit" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

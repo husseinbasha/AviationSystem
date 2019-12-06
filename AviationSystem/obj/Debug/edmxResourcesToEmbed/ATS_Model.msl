@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ATS_DBModelStoreContainer" CdmEntityContainer="ATS_DBEntities">
+    <EntitySetMapping Name="Admins">
+      <EntityTypeMapping TypeName="ATS_DBModel.Admin">
+        <MappingFragment StoreEntitySet="Admin">
+          <ScalarProperty Name="AdminID" ColumnName="AdminID" />
+          <ScalarProperty Name="AdminNo" ColumnName="AdminNo" />
+          <ScalarProperty Name="AdminFirstName" ColumnName="AdminFirstName" />
+          <ScalarProperty Name="AdminLastName" ColumnName="AdminLastName" />
+          <ScalarProperty Name="AdminUsername" ColumnName="AdminUsername" />
+          <ScalarProperty Name="AdminPassword" ColumnName="AdminPassword" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LandingPermits">
+      <EntityTypeMapping TypeName="ATS_DBModel.LandingPermit">
+        <MappingFragment StoreEntitySet="LandingPermit">
+          <ScalarProperty Name="LpermitID" ColumnName="LpermitID" />
+          <ScalarProperty Name="LpermitNo" ColumnName="LpermitNo" />
+          <ScalarProperty Name="OperatorName" ColumnName="OperatorName" />
+          <ScalarProperty Name="AircraftType" ColumnName="AircraftType" />
+          <ScalarProperty Name="AircraftReg" ColumnName="AircraftReg" />
+          <ScalarProperty Name="EntryPoint" ColumnName="EntryPoint" />
+          <ScalarProperty Name="ExitPoint" ColumnName="ExitPoint" />
+          <ScalarProperty Name="ArrivalTime" ColumnName="ArrivalTime" />
+          <ScalarProperty Name="TakeoffTime" ColumnName="TakeoffTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LandingTakeoffPermits">
+      <EntityTypeMapping TypeName="ATS_DBModel.LandingTakeoffPermit">
+        <MappingFragment StoreEntitySet="LandingTakeoffPermit">
+          <ScalarProperty Name="LandingTakeoffID" ColumnName="LandingTakeoffID" />
+          <ScalarProperty Name="LandingTakeoffNo" ColumnName="LandingTakeoffNo" />
+          <ScalarProperty Name="OperatorName" ColumnName="OperatorName" />
+          <ScalarProperty Name="AircraftType" ColumnName="AircraftType" />
+          <ScalarProperty Name="AircraftReg" ColumnName="AircraftReg" />
+          <ScalarProperty Name="EntryPoint" ColumnName="EntryPoint" />
+          <ScalarProperty Name="ExitPoint" ColumnName="ExitPoint" />
+          <ScalarProperty Name="ArrivalTime" ColumnName="ArrivalTime" />
+          <ScalarProperty Name="TakeoffTime" ColumnName="TakeoffTime" />
+          <ScalarProperty Name="Purpose" ColumnName="Purpose" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OverFlyPermits">
+      <EntityTypeMapping TypeName="ATS_DBModel.OverFlyPermit">
+        <MappingFragment StoreEntitySet="OverFlyPermit">
+          <ScalarProperty Name="OverFlyID" ColumnName="OverFlyID" />
+          <ScalarProperty Name="OverFlyNumber" ColumnName="OverFlyNumber" />
+          <ScalarProperty Name="OperatorName" ColumnName="OperatorName" />
+          <ScalarProperty Name="AircraftType" ColumnName="AircraftType" />
+          <ScalarProperty Name="AircraftReg" ColumnName="AircraftReg" />
+          <ScalarProperty Name="EntryPoint" ColumnName="EntryPoint" />
+          <ScalarProperty Name="ExitPoint" ColumnName="ExitPoint" />
+          <ScalarProperty Name="ArrivalTime" ColumnName="ArrivalTime" />
+          <ScalarProperty Name="TakeoffTime" ColumnName="TakeoffTime" />
+          <ScalarProperty Name="Purpose" ColumnName="Purpose" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Permits">
+      <EntityTypeMapping TypeName="ATS_DBModel.Permit">
+        <MappingFragment StoreEntitySet="Permits">
+          <ScalarProperty Name="PermitID" ColumnName="PermitID" />
+          <ScalarProperty Name="PermitNumber" ColumnName="PermitNumber" />
+          <ScalarProperty Name="PermitType" ColumnName="PermitType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="ATS_DBModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Emp_ATC">
+      <EntityTypeMapping TypeName="ATS_DBModel.Emp_ATC">
+        <MappingFragment StoreEntitySet="Emp_ATC">
+          <ScalarProperty Name="ATC_ID" ColumnName="ATC_ID" />
+          <ScalarProperty Name="ATC_First_Name" ColumnName="ATC_First_Name" />
+          <ScalarProperty Name="ATC_Last_Name" ColumnName="ATC_Last_Name" />
+          <ScalarProperty Name="ATC_Shift_Starts" ColumnName="ATC_Shift_Starts" />
+          <ScalarProperty Name="ATC_Shift_Ends" ColumnName="ATC_Shift_Ends" />
+          <ScalarProperty Name="ATC_DOB" ColumnName="ATC_DOB" />
+          <ScalarProperty Name="ATC_Phone_Number" ColumnName="ATC_Phone_Number" />
+          <ScalarProperty Name="ATC_Reg_ID" ColumnName="ATC_Reg_ID" />
+          <ScalarProperty Name="ATC_Permits_Issued" ColumnName="ATC_Permits_Issued" />
+          <ScalarProperty Name="ATC_Username" ColumnName="ATC_Username" />
+          <ScalarProperty Name="ATC_Password" ColumnName="ATC_Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

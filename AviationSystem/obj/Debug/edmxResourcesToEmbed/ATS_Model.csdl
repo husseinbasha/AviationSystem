@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ATS_DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="AdminID" />
+    </Key>
+    <Property Name="AdminID" Type="Int32" Nullable="false" />
+    <Property Name="AdminNo" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="AdminFirstName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="AdminLastName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="AdminUsername" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="AdminPassword" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Emp_ATC" Relationship="ATS_DBModel.Emp_ATCAdmin" FromRole="Admin" ToRole="Emp_ATC" />
+    <Property Name="Emp_ATCATC_ID" Type="Int32" Nullable="false" />
+    <Property Name="Emp_ATCATC_Username" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Emp_ATCATC_Password" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="LandingPermit">
+    <Key>
+      <PropertyRef Name="LpermitID" />
+    </Key>
+    <Property Name="LpermitID" Type="Int32" Nullable="false" />
+    <Property Name="LpermitNo" Type="Int32" />
+    <Property Name="OperatorName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="AircraftType" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="AircraftReg" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="EntryPoint" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="ExitPoint" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="ArrivalTime" Type="DateTime" Precision="3" />
+    <Property Name="TakeoffTime" Type="DateTime" Precision="3" />
+    <Property Name="id" Type="Int32" />
+    <NavigationProperty Name="Permit" Relationship="Self.FK_LandingPermit_Permits" FromRole="LandingPermit" ToRole="Permits" />
+  </EntityType>
+  <EntityType Name="LandingTakeoffPermit">
+    <Key>
+      <PropertyRef Name="LandingTakeoffID" />
+    </Key>
+    <Property Name="LandingTakeoffID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="LandingTakeoffNo" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="OperatorName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="AircraftType" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="AircraftReg" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="EntryPoint" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="ExitPoint" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="ArrivalTime" Type="DateTime" Precision="3" />
+    <Property Name="TakeoffTime" Type="DateTime" Precision="3" />
+    <Property Name="Purpose" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="OverFlyPermit">
+    <Key>
+      <PropertyRef Name="OverFlyID" />
+    </Key>
+    <Property Name="OverFlyID" Type="Int32" Nullable="false" />
+    <Property Name="OverFlyNumber" Type="Int32" />
+    <Property Name="OperatorName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="AircraftType" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="AircraftReg" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="EntryPoint" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="ExitPoint" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="ArrivalTime" Type="DateTime" Precision="3" />
+    <Property Name="TakeoffTime" Type="DateTime" Precision="3" />
+    <Property Name="Purpose" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Permit">
+    <Key>
+      <PropertyRef Name="PermitID" />
+    </Key>
+    <Property Name="PermitID" Type="Int32" Nullable="false" />
+    <Property Name="PermitNumber" Type="Int32" />
+    <Property Name="PermitType" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="LandingPermit" Relationship="Self.FK_LandingPermit_Permits" FromRole="Permits" ToRole="LandingPermit" />
+    <NavigationProperty Name="Emp_ATC" Relationship="ATS_DBModel.Emp_ATCPermit" FromRole="Permit" ToRole="Emp_ATC" />
+    <Property Name="Emp_ATCATC_ID" Type="Int32" Nullable="false" />
+    <Property Name="Emp_ATCATC_Username" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Emp_ATCATC_Password" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Emp_ATC">
+    <Key>
+      <PropertyRef Name="ATC_ID" />
+      <PropertyRef Name="ATC_Username" />
+      <PropertyRef Name="ATC_Password" />
+    </Key>
+    <Property Name="ATC_ID" Type="Int32" Nullable="false" />
+    <Property Name="ATC_First_Name" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="ATC_Last_Name" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="ATC_Shift_Starts" Type="DateTime" Precision="3" />
+    <Property Name="ATC_Shift_Ends" Type="DateTime" Precision="3" />
+    <Property Name="ATC_DOB" Type="DateTime" Precision="0" />
+    <Property Name="ATC_Phone_Number" Type="Int32" />
+    <Property Name="ATC_Reg_ID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="ATC_Permits_Issued" Type="Int32" />
+    <Property Name="ATC_Username" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="ATC_Password" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Admins" Relationship="ATS_DBModel.Emp_ATCAdmin" FromRole="Emp_ATC" ToRole="Admin" />
+    <NavigationProperty Name="Permits" Relationship="ATS_DBModel.Emp_ATCPermit" FromRole="Emp_ATC" ToRole="Permit" />
+  </EntityType>
+  <Association Name="FK_LandingPermit_Permits">
+    <End Type="Self.Permit" Multiplicity="1" Role="Permits" />
+    <End Type="Self.LandingPermit" Multiplicity="0..1" Role="LandingPermit" />
+    <ReferentialConstraint>
+      <Principal Role="Permits">
+        <PropertyRef Name="PermitID" />
+      </Principal>
+      <Dependent Role="LandingPermit">
+        <PropertyRef Name="LpermitID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ATS_DBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Admins" EntityType="Self.Admin" />
+    <EntitySet Name="LandingPermits" EntityType="Self.LandingPermit" />
+    <EntitySet Name="LandingTakeoffPermits" EntityType="Self.LandingTakeoffPermit" />
+    <EntitySet Name="OverFlyPermits" EntityType="Self.OverFlyPermit" />
+    <EntitySet Name="Permits" EntityType="Self.Permit" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="Emp_ATC" EntityType="Self.Emp_ATC" />
+    <AssociationSet Name="FK_LandingPermit_Permits" Association="Self.FK_LandingPermit_Permits">
+      <End EntitySet="Permits" Role="Permits" />
+      <End EntitySet="LandingPermits" Role="LandingPermit" />
+    </AssociationSet>
+    <AssociationSet Name="Emp_ATCAdmin" Association="ATS_DBModel.Emp_ATCAdmin">
+      <End Role="Emp_ATC" EntitySet="Emp_ATC" />
+      <End Role="Admin" EntitySet="Admins" />
+    </AssociationSet>
+    <AssociationSet Name="Emp_ATCPermit" Association="ATS_DBModel.Emp_ATCPermit">
+      <End Role="Emp_ATC" EntitySet="Emp_ATC" />
+      <End Role="Permit" EntitySet="Permits" />
+    </AssociationSet>
+  </EntityContainer>
+  <Association Name="Emp_ATCAdmin">
+    <End Type="ATS_DBModel.Emp_ATC" Role="Emp_ATC" Multiplicity="1" />
+    <End Type="ATS_DBModel.Admin" Role="Admin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Emp_ATC">
+        <PropertyRef Name="ATC_ID" />
+        <PropertyRef Name="ATC_Username" />
+        <PropertyRef Name="ATC_Password" />
+      </Principal>
+      <Dependent Role="Admin">
+        <PropertyRef Name="Emp_ATCATC_ID" />
+        <PropertyRef Name="Emp_ATCATC_Username" />
+        <PropertyRef Name="Emp_ATCATC_Password" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Emp_ATCPermit">
+    <End Type="ATS_DBModel.Emp_ATC" Role="Emp_ATC" Multiplicity="1" />
+    <End Type="ATS_DBModel.Permit" Role="Permit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Emp_ATC">
+        <PropertyRef Name="ATC_ID" />
+        <PropertyRef Name="ATC_Username" />
+        <PropertyRef Name="ATC_Password" />
+      </Principal>
+      <Dependent Role="Permit">
+        <PropertyRef Name="Emp_ATCATC_ID" />
+        <PropertyRef Name="Emp_ATCATC_Username" />
+        <PropertyRef Name="Emp_ATCATC_Password" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
